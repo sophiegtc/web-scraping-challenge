@@ -11,3 +11,13 @@ JPL Mars Space Images :
     import BeautifulSoup
     from url='https://data-class-jpl-space.s3.amazonaws.com/JPL_Space/index.html'
     scrape the link of full image
+
+Mars Facts
+    import pandas
+    url='https://space-facts.com/mars/'
+    tables=pd.read_html(url)
+    df=table[2]
+    html_table = df.to_html()
+
+Mars Hemispheres
+    url='https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
