@@ -21,3 +21,7 @@ Mars Facts
 
 Mars Hemispheres
     url='https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
+    hemisphere_image_urls  = []
+    for item in main_page_items:
+    title = item.find('h3').text
+    link = 'https://astrogeology.usgs.gov/' + result.find('a', class_='itemLink product-item')["href"]

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scraping Reports</a></p>
+    </div>
+
+    <div class="jumbotron text-left">
+      <h2> Lateste Mars News</h2>
+      <h3>{{listings.news_title}}</h3>
+      <p>{{listings.news_paragraph}}</p>
+    </div>
+  
+  <div class="container">
+    <!-- first Row -->
+    <div class="row">
+        <!-- First of two columns -->
+        <div class="col-md-6">
+            <h2 class="text-left">Featured Mars Image</h2>
+            <hr>
+            <img src= {{listings.mars_image}} width="100%" >
+        </div>
+   
+        <!-- Second of two columns -->
+        <div class="col-md-6">
+            <h2>Mars Fact</h2>
+            <hr>
+            {{listings.Mars_fact | safe}}
+        </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="col-md-6">
+    <h2>Mars Hemisphere</h2>
+    <hr>
+    <div class="container">
+        <!-- first Row -->
+      <div class="col-md-6">
+        <img src= {{listings.hemisphere_list[0].img_url}} width="100%" >
+        <hr>
+        <h4>{{listings.hemisphere_list[0].title}} </h4> 
+        
+        <img src= {{listings.hemisphere_list[1].img_url}} width="100%" >
+        <hr>
+        <h4>{{listings.hemisphere_list[1].title}} </h4> 
+      </div> 
+
+      <div class="col-md-6">
+        <img src= {{listings.hemisphere_list[2].img_url}} width="100%" >
+        <hr>
+        <h4>{{listings.hemisphere_list[2].title}} </h4> 
+        
+        <img src= {{listings.hemisphere_list[3].img_url}} width="100%" >
+        <hr>
+        <h3>{{listings.hemisphere_list[3].title}} </h3> 
+
+      </div>
+    </div>
+  </div>
+
+    
+</body>
+
+</html>
+
