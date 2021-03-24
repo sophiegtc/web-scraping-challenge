@@ -16,7 +16,9 @@ Mars Facts
     import pandas
     url='https://space-facts.com/mars/'
     tables=pd.read_html(url)
-    df=table[2]
+    df=table[0]
+    df = df.rename(columns={0: "Description", 1: "Mars"})
+    df = df.set_index("Description")
     html_table = df.to_html()
 
 Mars Hemispheres
@@ -25,3 +27,13 @@ Mars Hemispheres
     for item in main_page_items:
     title = item.find('h3').text
     link = 'https://astrogeology.usgs.gov/' + result.find('a', class_='itemLink product-item')["href"]
+
+
+Step 2 MongoDB and Flask Application
+
+    1) converting Jupyter notebook into a Python script, name scrape_mars.py.
+    2)create a route " /scrape", import scrape_mars.py to the route.
+    3) Create a root route " /", query Mongo database and pass the mars data into an HTML template.
+    4) Create a template HTML file "index.html", display all of the data in HTML.
+    5) apply bootstrap to "index.html.
+    6) choose "mark down", insert image in Jupyter notebook to finish screen shot of final html.
